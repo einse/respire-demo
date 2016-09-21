@@ -1,0 +1,55 @@
+.hidden {
+	display: none;
+}
+
+body {
+	height: 100%;
+	margin: 0;
+	display: flex;
+	font-family: 'Liberation Sans', 'Arial', sans-serif;
+	font-size: small;
+	overflow-y: hidden;
+}
+
+body > * {
+	flex-grow: 1;
+}
+
+.middle {
+	padding: 0.1cm;
+	background-color: lightcoral;
+}
+
+#paper {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	flex-wrap: wrap;
+	align-content: flex-start;
+	overflow-x: scroll;
+}
+
+.p {
+	background-color: white;
+	width: 15%;
+	min-height: 1.0rem;
+	padding: 0.5rem;
+}
+
+.p:focus {
+	background-color: skyblue;
+}
+
+.left-panel {
+	max-width: 1cm;
+	min-width: 1cm;
+	background-color: white;
+	border-right: 0.01cm solid silver;
+}
+
+.right-panel {
+	max-width: 1cm;
+	min-width: 1cm;
+	background-color: white;
+	border-left: 0.01cm solid silver;
+}
