@@ -7,5 +7,5 @@ $(document).keypress(function (e) {
 	}
 });
 
-$(".p:first").html(Calendar.today());
+$(".p:first").html(Calendar.today('ru'));
 $(".p:last").focus();
