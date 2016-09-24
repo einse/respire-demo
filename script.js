@@ -1,11 +1,11 @@
 $(document).keypress(function (e) {
 	if (e.keyCode === 13) { /* enter */
 		// Create new entry
-		var focused = $(".p:focus");
-		focused.after('<div class="p" contentEditable="true"></div>').next().focus();
+		var focused = $(".entry:focus");
+		focused.after('<div class="entry" contentEditable="true"></div>').next().focus();
 		e.preventDefault();
 	}
 });
 
-$(".p:first").html(Calendar.today('ru'));
-$(".p:last").focus();
+$(".entry:first").html(Calendar.today('ru'));
+$(".entry:last").focus();

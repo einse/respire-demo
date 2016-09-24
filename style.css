@@ -29,14 +29,14 @@ body > * {
 	overflow-x: scroll;
 }
 
-.p {
+.entry {
 	background-color: white;
 	width: 15%;
 	min-height: 1.0rem;
 	padding: 0.5rem;
 }
 
-.p:focus {
+.entry:focus {
 	background-color: skyblue;
 }
 
