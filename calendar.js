@@ -23,6 +23,9 @@ var Calendar = {
 		if (month < 10) {
 			month = '0' + month;
 		}
+		if (param === 'ja') {
+			return year + '年' + month + '月' + day + '日';
+		}
 		if (param === 'r') {
 			return year + '.' + month + '.' + day;
 		}
