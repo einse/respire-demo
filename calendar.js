@@ -35,6 +35,9 @@ var Calendar = {
 		if (param === 'a/') {
 			return month + '/' + day + '/' + year;
 		}
+		if (param === 'r-') {
+			return year + '-' + month + '-' + day;
+		}
 		return day + '.' + month + '.' + year;
 	}
 };
