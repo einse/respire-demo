@@ -29,14 +29,14 @@ var Calendar = {
 		if (param === 'r') {
 			return year + '.' + month + '.' + day;
 		}
+		if (param === 'r-') {
+			return year + '-' + month + '-' + day;
+		}
 		if (param === 'r/') {
 			return year + '/' + month + '/' + day;
 		}
 		if (param === 'a/') {
 			return month + '/' + day + '/' + year;
-		}
-		if (param === 'r-') {
-			return year + '-' + month + '-' + day;
 		}
 		return day + '.' + month + '.' + year;
 	}
