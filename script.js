@@ -29,5 +29,6 @@ $(document).keyup(function (event) {
 });
 
 $(".entry:first").html(Calendar.today('ru'));
-$("#paper").attr('data-d', Calendar.today('r-')); // See .data() in Jquery 3.x
+// TODO: See .data() in jQuery 3.x
+$("#paper").attr('data-d', Calendar.today('r-'));
 $(".entry:last").focus();
