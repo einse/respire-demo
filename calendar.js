@@ -39,5 +39,11 @@ var Calendar = {
 			return month + '/' + day + '/' + year;
 		}
 		return day + '.' + month + '.' + year;
+	},
+	isValid: function (dateString {
+	},
+	prev: function (dateString) {
+	},
+	next: function (dateString) {
 	}
 };
