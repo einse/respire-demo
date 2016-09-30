@@ -40,7 +40,7 @@ var Calendar = {
 		}
 		return day + '.' + month + '.' + year;
 	},
-	isValid: function (dateString {
+	isValid: function (dateString) {
 	},
 	prev: function (dateString) {
 	},
