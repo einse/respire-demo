@@ -15,18 +15,31 @@ body > * {
 	flex-grow: 1;
 }
 
-#paper {
+.middle {
 	padding: 0.1cm;
 	background-color: lightcoral;
 }
 
-.entry-set {
+#paper {
 	display: flex;
 	flex-direction: column;
 	height: 100%;
 	flex-wrap: wrap;
 	align-content: flex-start;
 	overflow-x: scroll;
+}
+
+/**
+ * TODO: Fix flexbox styling
+ * TODO: Test layout scrolling more accurately
+ */
+.entry-set {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	flex-wrap: wrap;
+	align-content: flex-start;
+	/* overflow-x: scroll; */
 }
 
 .entry {
