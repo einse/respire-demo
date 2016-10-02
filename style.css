@@ -15,12 +15,12 @@ body > * {
 	flex-grow: 1;
 }
 
-.middle {
+#paper {
 	padding: 0.1cm;
 	background-color: lightcoral;
 }
 
-#paper {
+.entry-set {
 	display: flex;
 	flex-direction: column;
 	height: 100%;
