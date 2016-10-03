@@ -51,13 +51,18 @@ var Calendar = {
 			return year + '年' + month + '月' + day + '日';
 		}
 		
+		// Output example: 01.10.2016
+		if (param === '' || param === '.') {
+			return day + '.' + month + '.' + year;
+		}
+		
 		// Output example: 2016.10.01
-		if (param === 'r') {
+		if (param === 'r' || param === 'r.') {
 			return year + '.' + month + '.' + day;
 		}
 		
 		// Output example: 2016-10-01
-		// This format is ISO standard. Learn more: 
+		// This format is ISO standard. Learn more:
 		// http://www.w3schools.com/js/js_date_formats.asp
 		if (param === 'r-' || param === 'iso') {
 			return year + '-' + month + '-' + day;
@@ -73,9 +78,11 @@ var Calendar = {
 			return month + '/' + day + '/' + year;
 		}
 		
-		// Output example (default):
-		// 01.10.2016
-		return day + '.' + month + '.' + year;
+		// Default: ISO.
+		// Output example: 2016-10-01
+		// This format is ISO standard. Learn more:
+		// http://www.w3schools.com/js/js_date_formats.asp
+		return year + '-' + month + '-' + day;
 	},
 	/**
 	 * isValid(dateString);

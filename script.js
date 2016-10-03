@@ -32,6 +32,6 @@ $(".entry:first").html(Calendar.today('ru'));
 
 // TODO: See .data() in jQuery 3.x
 // TODO: Fix for multiple entry-set
-$(".entry-set:first").attr('data-d', Calendar.today('r-'));
+$(".entry-set:first").attr('data-d', Calendar.today());
 
 $(".entry:last").focus();
