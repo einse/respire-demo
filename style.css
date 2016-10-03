@@ -39,12 +39,20 @@ body > * {
 	height: 100%;
 	flex-wrap: wrap;
 	align-content: flex-start;
-	/* overflow-x: scroll; */
+/*
+	overflow-x: scroll;
+*/
+	/* "width: 6cm": here or in '.entry'? */
+/*
+	width: 6cm;
+*/
+	margin: 0 0.1cm;
 }
 
 .entry {
 	background-color: white;
-	width: 15%;
+	/* "width: 6cm": here or in '.entry-set'? */
+	width: 6cm;
 	min-height: 1.0rem;
 	padding: 0.5rem;
 }
