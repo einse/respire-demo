@@ -28,7 +28,7 @@ $(document).keyup(function (event) {
 	}
 });
 
-$(".entry:first").html(Calendar.today('ru'));
+$(".entry:first").html(Calendar.prev(Calendar.today()));
 
 // TODO: See .data() in jQuery 3.x
 // TODO: Fix for multiple entry-set

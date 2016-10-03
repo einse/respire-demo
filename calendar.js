@@ -84,6 +84,22 @@ var Calendar = {
 		// http://www.w3schools.com/js/js_date_formats.asp
 		return year + '-' + month + '-' + day;
 	},
+	isLeapYear: function (yearString) {
+		var year = Number(yearString);
+		var _isLeapYear = false;
+		if (year % 400 === 0)
+		{
+			_isLeapYear = true;
+		} else {
+			if (year % 4 === 0) {
+				_isLeapYear = true;
+			}
+			if (year % 100 === 0) {
+				_isLeapYear = false;
+			}
+		}
+		return _isLeapYear;
+	},
 	/**
 	 * isValid(dateString);
 	 * 
@@ -101,12 +117,13 @@ var Calendar = {
 		var dayCount = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 		var monthNumberJS;
 		var isLeapYear = false;
+		var parsed;
 		
 		/** 
 		 * Parsing the dateString
 		 * (Only positive numbers will pass.)
 		 */
-		var parsed = dateString.split('-');
+		parsed = dateString.split('-');
 		if (parsed.length !== 3) {
 			//~ console.log('array length');
 			return false;
@@ -161,15 +178,88 @@ var Calendar = {
 		monthNumberJS = parsed[1] - 1;
 		if (parsed[2] > dayCount[monthNumberJS]) {
 			if (monthNumberJS === 1 && parsed[2] === 29 && isLeapYear) {
-				return true;
+				return {
+					year: parsed[0],
+					month: parsed[1],
+					day: parsed[2]
+				};
 			}
 			//~ console.log('day test failed');
 			return false;
 		}
 		
-		return true;
+		return {
+			year: parsed[0],
+			month: parsed[1],
+			day: parsed[2]
+		};
 	},
 	prev: function (dateString) {
+		var dateObject = this.isValid(dateString);
+		//~ console.log(dateObject);
+		var day;
+		var month;
+		var year;
+		var prevDate;
+		var monthNumberJS;
+		var dayCountBis = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+		var dayString;
+		var monthString;
+		if (dateObject) {
+			day = dateObject.day - 1;
+			month = dateObject.month;
+			year = dateObject.year;
+			
+			if (month < 10) {
+				monthString = '0' + month;
+			} else {
+				monthString = '' + month;
+			}
+			if (day < 10) {
+				dayString = '0' + day;
+			} else {
+				dayString = '' + day;
+			}
+			prevDate = year + '-' + monthString + '-' + dayString;
+			
+			if (this.isValid(prevDate)) {
+				return prevDate;
+			} else {
+				if (day === 0) {
+					month = month - 1;
+					if (month === 0) {
+						year = year - 1;
+						month = 12;
+						day = 31;
+					}
+					monthNumberJS = month - 1;
+					day = dayCountBis[monthNumberJS];
+				}
+				
+				/**
+				 * Check for 2100.02.29, 1900.02.29, 1800.02.29...
+				 */
+				if (month === 2 && day === 29 && this.isLeapYear(year)) {
+					day = 29;
+				} else {
+					day = 28;
+				}
+				
+				if (month < 10) {
+					monthString = '0' + month;
+				} else {
+					monthString = '' + month;
+				}
+				if (day < 10) {
+					dayString = '0' + day;
+				} else {
+					dayString = '' + day;
+				}
+				return year + '-' + monthString + '-' + dayString;
+			}
+		}
+		console.error("Couldn't get a previous date");
+		return '';
 	},
 	next: function (dateString) {
 	}
