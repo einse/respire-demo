@@ -239,10 +239,12 @@ var Calendar = {
 				/**
 				 * Check for 2100.02.29, 1900.02.29, 1800.02.29...
 				 */
-				if (month === 2 && day === 29 && this.isLeapYear(year)) {
-					day = 29;
-				} else {
-					day = 28;
+				if (month === 2 && day === 29) { 
+					if (this.isLeapYear(year)) {
+						day = 29;
+					} else {
+						day = 28;
+					}
 				}
 				
 				if (month < 10) {
