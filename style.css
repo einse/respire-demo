@@ -11,6 +11,7 @@ body {
 	font-size: small;
 	background-color: lightcoral;
 	padding: 0.1cm;
+	margin: 0;
 }
 
 /**
@@ -20,7 +21,6 @@ body {
 body {
 	display: flex;
 	height: 100%;
-	margin: 0;
 	overflow-y: hidden;
 }
 
