@@ -29,29 +29,17 @@ body > * {
 	overflow-x: scroll;
 }
 
-/**
- * TODO: Fix flexbox styling
- * TODO: Test layout scrolling more accurately
- */
 .entry-set {
 	display: flex;
 	flex-direction: column;
 	height: 100%;
 	flex-wrap: wrap;
 	align-content: flex-start;
-/*
-	overflow-x: scroll;
-*/
-	/* "width: 6cm": here or in '.entry'? */
-/*
-	width: 6cm;
-*/
 	margin: 0 0.1cm;
 }
 
 .entry {
 	background-color: white;
-	/* "width: 6cm": here or in '.entry-set'? */
 	width: 6cm;
 	min-height: 1.0rem;
 	padding: 0.5rem;
