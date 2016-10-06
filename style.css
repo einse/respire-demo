@@ -14,16 +14,23 @@ body {
  */ 
 
 #paper {
-	display: inline-flex;
-	flex-direction: row;
+	display: flex;
+	flex-flow: row nowrap;
+	height: 100vh;
+	max-height: 100vh;
 }
 
 .set {
-	
+	display: flex;
+	flex-flow: column wrap;
+	margin: 0.1cm;
+	flex-grow: 0;
+	flex-shrink: 0;
+	flex-basis: 10cm;
 }
 
-.set-entry {
-
+.set__entry {
+	
 }
 
 /**
