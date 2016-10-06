@@ -2,15 +2,10 @@
  * Setting layout part
  */
 
-.hidden {
-	display: none;
-}
-
 body {
 	font-family: 'Liberation Sans', 'Arial', sans-serif;
 	font-size: small;
 	background-color: lightcoral;
-	padding: 0.1cm;
 	margin: 0;
 }
 
@@ -19,37 +14,28 @@ body {
  */ 
 
 #paper {
-	display: flex;
-	height: 100%;
-	flex-direction: column;
-	flex-wrap: wrap;
-	align-content: flex-start;
-	overflow-x: scroll;
+	display: inline-flex;
+	flex-direction: row;
 }
 
-.entry-set {
-	display: flex;
-	height: 100%;
-	flex-direction: column;
-	flex-wrap: wrap;
-	align-content: flex-start;
-	margin: 0 0.1cm;
+.set {
+	
 }
 
-.entry {
-	width: 6cm;
+.set-entry {
+
 }
 
 /**
  * Other rules
  */
 
-.entry {
+.set__entry {
 	background-color: white;
 	min-height: 1.0rem;
 	padding: 0.5rem;
 }
 
-.entry:focus {
+.set__entry:focus {
 	background-color: skyblue;
 }

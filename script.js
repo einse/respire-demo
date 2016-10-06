@@ -17,8 +17,8 @@ $(document).keydown(function (event) {
 	
 	if (keyMap[keyName['Ctrl']] && keyMap[keyName['Enter']]) {
 		// On Ctrl+Enter, create new entry
-		$focused = $(".entry:focus");
-		$focused.after('<div class="entry" contentEditable="true"></div>').next().focus();
+		$focused = $(".set__entry:focus");
+		$focused.after('<div class="set__entry" contenteditable></div>').next().focus();
 	}
 });
 
@@ -30,9 +30,9 @@ $(document).keyup(function (event) {
 
 // TODO: See .data() in jQuery 3.x
 // TODO: Fix for multiple entry-set
-$(".entry-set:first").attr('data-d', Calendar.prev(Calendar.today()));
-$(".entry-set:first .entry:first").html(Calendar.prev(Calendar.today()));
-$(".entry-set:last").attr('data-d', Calendar.today());
-$(".entry-set:last .entry:first").html(Calendar.today());
+//~ $(".entry-set:first").attr('data-d', Calendar.prev(Calendar.today()));
+//~ $(".entry-set:first .entry:first").html(Calendar.prev(Calendar.today()));
+//~ $(".entry-set:last").attr('data-d', Calendar.today());
+//~ $(".entry-set:last .entry:first").html(Calendar.today());
 
-$(".entry-set:last .entry:last").focus();
+//~ $(".entry-set:last .entry:last").focus();
