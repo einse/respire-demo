@@ -9,6 +9,8 @@
 body {
 	font-family: 'Liberation Sans', 'Arial', sans-serif;
 	font-size: small;
+	background-color: lightcoral;
+	padding: 0.1cm;
 }
 
 /**
@@ -24,11 +26,6 @@ body {
 
 body > * {
 	flex-grow: 1;
-}
-
-.middle {
-	padding: 0.1cm;
-	background-color: lightcoral;
 }
 
 #paper {
