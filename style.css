@@ -18,16 +18,6 @@ body {
  * Flexbox part
  */ 
 
-body {
-	display: flex;
-	height: 100%;
-	overflow-y: hidden;
-}
-
-body > * {
-	flex-grow: 1;
-}
-
 #paper {
 	display: flex;
 	height: 100%;
