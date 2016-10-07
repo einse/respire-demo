@@ -40,7 +40,6 @@ $(document).keydown(function (event) {
 			prevParentNodeWidth = $(prev.parentNode).width();
 			console.log(prevParentNodeWidth);
 			$(prev.parentNode).width(prevParentNodeWidth + prev.clientWidth);
-			//~ $(prev.parentNode).width(prevParentNodeWidth + 204);
 			prevParentNodeWidth = $(prev.parentNode).width();
 			console.log(prevParentNodeWidth);
 		}
@@ -54,10 +53,10 @@ $(document).keyup(function (event) {
 });
 
 // TODO: See .data() in jQuery 3.x
-// TODO: Fix for multiple entry-set
-//~ $(".entry-set:first").attr('data-d', Calendar.prev(Calendar.today()));
-//~ $(".entry-set:first .entry:first").html(Calendar.prev(Calendar.today()));
-//~ $(".entry-set:last").attr('data-d', Calendar.today());
-//~ $(".entry-set:last .entry:first").html(Calendar.today());
+// TODO: Fix for multiple set
+$(".set:first").attr('data-d', Calendar.prev(Calendar.today()));
+$(".set:first .set__entry:first").html(Calendar.prev(Calendar.today()));
+$(".set:last").attr('data-d', Calendar.today());
+$(".set:last .set__entry:first").html(Calendar.today());
 
-//~ $(".entry-set:last .entry:last").focus();
+$(".set:last .set__entry:last").focus();
