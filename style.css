@@ -18,15 +18,18 @@ body {
 	flex-flow: row nowrap;
 	height: 100vh;
 	max-height: 100vh;
+	justify-content: space-around;
+}
+
+.set {
+	flex-basis: 6cm;
 }
 
 .set {
 	display: flex;
 	flex-flow: column wrap;
 	margin: 0.1cm;
-	flex-grow: 0;
-	flex-shrink: 0;
-	flex-basis: 10cm;
+	align-content: flex-start;
 }
 
 .set__entry {

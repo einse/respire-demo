@@ -10,6 +10,11 @@ var keyMap = {
 
 $(document).keydown(function (event) {
 	var $focused;
+	var offsetTop;
+	var $prev;
+	var prev;
+	var prevOffsetTop;
+	var prevParentNodeWidth;
 	
 	if (event.keyCode in keyMap) {
 		keyMap[event.keyCode] = true;
@@ -19,6 +24,25 @@ $(document).keydown(function (event) {
 		// On Ctrl+Enter, create new entry
 		$focused = $(".set__entry:focus");
 		$focused.after('<div class="set__entry" contenteditable></div>').next().focus();
+		$focused = $(".set__entry:focus");
+		offsetTop = $focused[0].offsetTop;
+		//~ console.log(offsetTop);
+		$focused.attr('data-offsetTop', offsetTop);
+		
+		$prev = $focused.prev();
+		prev = $prev[0];
+		prevOffsetTop = prev.offsetTop;
+		if (offsetTop < prevOffsetTop) {
+			//~ console.log('less! clientWidth', prev.clientWidth);
+			//~ console.log('less! offsetWidth', prev.offsetWidth);
+			//~ console.log('less! parentNode.offsetWidth', prev.parentNode.offsetWidth);
+			//~ console.log('less! parentNode.clientWidth', prev.parentNode.clientWidth);
+			prevParentNodeWidth = $(prev.parentNode).width();
+			//~ console.log(prevParentNodeWidth);
+			//~ $(prev.parentNode).width(prevParentNodeWidth + prev.clientWidth);
+			prevParentNodeWidth = $(prev.parentNode).width();
+			//~ console.log(prevParentNodeWidth);
+		}
 	}
 });
 
