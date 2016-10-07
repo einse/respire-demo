@@ -7,31 +7,30 @@ body {
 	font-size: small;
 	background-color: lightcoral;
 	margin: 0;
+	overflow-y: hidden;
 }
 
 /**
  * Flexbox part
  */ 
 
+body {
+	overflow-x: scroll;
+}
+
 #paper {
 	display: flex;
 	flex-flow: row nowrap;
 	height: 100vh;
 	max-height: 100vh;
-	justify-content: center;
-}
-
-.set {
-	
+	justify-content: flex-start;
 }
 
 .set {
 	display: flex;
 	flex-flow: column wrap;
 	margin: 0.1cm;
-	align-content: flex-start;
-	overflow-y: auto;
-	overflow-x: hidden;
+	flex: 0 0 auto;
 }
 
 .set__entry {

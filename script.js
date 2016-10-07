@@ -40,6 +40,7 @@ $(document).keydown(function (event) {
 			prevParentNodeWidth = $(prev.parentNode).width();
 			console.log(prevParentNodeWidth);
 			$(prev.parentNode).width(prevParentNodeWidth + prev.clientWidth);
+			//~ $(prev.parentNode).width(prevParentNodeWidth + 204);
 			prevParentNodeWidth = $(prev.parentNode).width();
 			console.log(prevParentNodeWidth);
 		}
