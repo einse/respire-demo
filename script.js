@@ -33,15 +33,15 @@ $(document).keydown(function (event) {
 		prev = $prev[0];
 		prevOffsetTop = prev.offsetTop;
 		if (offsetTop < prevOffsetTop) {
-			//~ console.log('less! clientWidth', prev.clientWidth);
-			//~ console.log('less! offsetWidth', prev.offsetWidth);
-			//~ console.log('less! parentNode.offsetWidth', prev.parentNode.offsetWidth);
-			//~ console.log('less! parentNode.clientWidth', prev.parentNode.clientWidth);
+			console.log('less! clientWidth', prev.clientWidth);
+			console.log('less! offsetWidth', prev.offsetWidth);
+			console.log('less! parentNode.offsetWidth', prev.parentNode.offsetWidth);
+			console.log('less! parentNode.clientWidth', prev.parentNode.clientWidth);
 			prevParentNodeWidth = $(prev.parentNode).width();
-			//~ console.log(prevParentNodeWidth);
-			//~ $(prev.parentNode).width(prevParentNodeWidth + prev.clientWidth);
+			console.log(prevParentNodeWidth);
+			$(prev.parentNode).width(prevParentNodeWidth + prev.clientWidth);
 			prevParentNodeWidth = $(prev.parentNode).width();
-			//~ console.log(prevParentNodeWidth);
+			console.log(prevParentNodeWidth);
 		}
 	}
 });

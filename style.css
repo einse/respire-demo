@@ -18,11 +18,11 @@ body {
 	flex-flow: row nowrap;
 	height: 100vh;
 	max-height: 100vh;
-	justify-content: space-around;
+	justify-content: center;
 }
 
 .set {
-	flex-basis: 6cm;
+	
 }
 
 .set {
@@ -30,10 +30,12 @@ body {
 	flex-flow: column wrap;
 	margin: 0.1cm;
 	align-content: flex-start;
+	overflow-y: auto;
+	overflow-x: hidden;
 }
 
 .set__entry {
-	
+	width: 188px;
 }
 
 /**
