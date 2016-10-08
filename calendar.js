@@ -103,12 +103,18 @@ var Calendar = {
 	/**
 	 * isValid(dateString);
 	 * 
-	 * Returns true or false whether dateString represents 
-	 * a correct date (using Proleptic Gregorian calendar). 
+	 * Returns an object which contains 3 numbers:
+	 * {
+	 *   year,
+	 *   month,
+	 *   day
+	 * },
+	 * or 'false', whether dateString represents 
+	 * a correct date (using Proleptic Gregorian Calendar).
 	 * 
 	 * The parameter dateString should contain
-	 * an ISO-formatted date. For example: "2016-01-03" for 
-	 * October 3, 2016.
+	 * an ISO-formatted date. For example: "2016-01-03"
+	 * (leading zeros are optional) for October 3, 2016.
 	 * 
 	 * Dates under 1000-01-01 are not supported: therefore
 	 * Calendar.isValid('999-12-31') {or earlier} will return false;
