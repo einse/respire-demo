@@ -271,7 +271,7 @@ var Calendar = {
 				return year + '-' + monthString + '-' + dayString;
 			}
 		}
-		console.error("Couldn't get a previous date");
+		console.error("Couldn't get the previous date");
 		return '';
 	},
 	/**
