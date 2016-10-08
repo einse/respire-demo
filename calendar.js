@@ -280,5 +280,72 @@ var Calendar = {
 	 * Tomorrow of 'dateString', both ISO-formatted.
 	 */
 	next: function (dateString) {
+		var dateObject = this.isValid(dateString);
+		//~ console.log(dateObject);
+		var day;
+		var month;
+		var year;
+		var nextDate;
+		var monthNumberJS;
+		var dayCountBis = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+		var dayString;
+		var monthString;
+		if (dateObject) {
+			day = dateObject.day + 1;
+			month = dateObject.month;
+			year = dateObject.year;
+			
+			if (month < 10) {
+				monthString = '0' + month;
+			} else {
+				monthString = '' + month;
+			}
+			if (day < 10) {
+				dayString = '0' + day;
+			} else {
+				dayString = '' + day;
+			}
+			nextDate = year + '-' + monthString + '-' + dayString;
+			
+			if (this.isValid(nextDate)) {
+				return nextDate;
+			} else {
+				monthNumberJS = month - 1;
+				if (day > dayCountBis[monthNumberJS]) {
+					day = 1;
+					month = month + 1;
+					if (month > 12) {
+						year = year + 1;
+						month = 1;
+					}
+				}
+				
+				/**
+				 * Check for a leap year.
+				 */
+				if (month === 2 && day === 29) { 
+					if (this.isLeapYear(year)) {
+						day = 29;
+					} else {
+						day = 1;
+						month = 3;
+					}
+				}
+				
+				if (month < 10) {
+					monthString = '0' + month;
+				} else {
+					monthString = '' + month;
+				}
+				if (day < 10) {
+					dayString = '0' + day;
+				} else {
+					dayString = '' + day;
+				}
+				return year + '-' + monthString + '-' + dayString;
+			}
+		}
+		console.error("Couldn't get the next date");
+		return '';
 	}
 };
