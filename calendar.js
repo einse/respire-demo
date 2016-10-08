@@ -10,7 +10,7 @@ var Calendar = {
 	 * Returns the present day in various formats.
 	 * 
 	 * The date used in all examples for this function
-	 * is October 1, 2016
+	 * is October 1, 2016.
 	 */
 	today: function (format) {
 		var d = new Date();
@@ -200,6 +200,11 @@ var Calendar = {
 			day: parsed[2]
 		};
 	},
+	/**
+	 * prev(dateString);
+	 * 
+	 * Yesterday of 'dateString', both ISO-formatted.
+	 */
 	prev: function (dateString) {
 		var dateObject = this.isValid(dateString);
 		//~ console.log(dateObject);
@@ -269,6 +274,11 @@ var Calendar = {
 		console.error("Couldn't get a previous date");
 		return '';
 	},
+	/**
+	 * next(dateString);
+	 * 
+	 * Tomorrow of 'dateString', both ISO-formatted.
+	 */
 	next: function (dateString) {
 	}
 };
