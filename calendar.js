@@ -5,14 +5,14 @@
 
 var Calendar = {
 	/**
-	 * today(param);
+	 * today(format);
 	 * 
 	 * Returns the present day in various formats.
 	 * 
 	 * The date used in all examples for this function
 	 * is October 1, 2016
 	 */
-	today: function (param) {
+	today: function (format) {
 		var d = new Date();
 		var day = d.getDate();
 		var month = d.getMonth();
@@ -25,7 +25,7 @@ var Calendar = {
 		 */
 		
 		// Output example: 1 октября 2016
-		if (param === 'ru') {
+		if (format === 'ru') {
 			month = ru[month];
 			return day + ' ' + month + ' ' + year;
 		}
@@ -47,34 +47,34 @@ var Calendar = {
 		}
 		
 		// Output example: 2016年10月01日
-		if (param === 'ja') {
+		if (format === 'ja') {
 			return year + '年' + month + '月' + day + '日';
 		}
 		
 		// Output example: 01.10.2016
-		if (param === '' || param === '.') {
+		if (format === '' || format === '.') {
 			return day + '.' + month + '.' + year;
 		}
 		
 		// Output example: 2016.10.01
-		if (param === 'r' || param === 'r.') {
+		if (format === 'r' || format === 'r.') {
 			return year + '.' + month + '.' + day;
 		}
 		
 		// Output example: 2016-10-01
 		// This format is ISO standard. Learn more:
 		// http://www.w3schools.com/js/js_date_formats.asp
-		if (param === 'r-' || param === 'iso') {
+		if (format === 'r-' || format === 'iso') {
 			return year + '-' + month + '-' + day;
 		}
 		
 		// Output example: 2016/10/01
-		if (param === 'r/') {
+		if (format === 'r/') {
 			return year + '/' + month + '/' + day;
 		}
 		
 		// Output example: 10/01/2016
-		if (param === 'a/') {
+		if (format === 'a/') {
 			return month + '/' + day + '/' + year;
 		}
 		
