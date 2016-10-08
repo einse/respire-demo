@@ -1,5 +1,5 @@
 /**
- * Setting layout part
+ * Setting layout
  */
 
 body {
@@ -10,20 +10,29 @@ body {
 	overflow-y: hidden;
 }
 
-/**
- * Flexbox part
- */ 
-
 body {
 	overflow-x: scroll;
 }
 
+/**
+ * Flexbox part
+ */
+
 #paper {
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+.mount {
+	display: flex;
+	flex-flow: column wrap;
+}
+
+.sets-collection {
 	display: flex;
 	flex-flow: row nowrap;
 	height: 100vh;
 	max-height: 100vh;
-	justify-content: flex-start;
 }
 
 .set {
@@ -33,13 +42,13 @@ body {
 	flex: 0 0 auto;
 }
 
-.set__entry {
-	width: 188px;
-}
-
 /**
  * Other rules
  */
+
+.set__entry {
+	width: 188px;
+}
 
 .set__entry {
 	background-color: white;
@@ -49,4 +58,17 @@ body {
 
 .set__entry:focus {
 	background-color: skyblue;
+}
+
+.mount__button {
+	margin: 0.1cm;
+}
+
+.mount__button {
+/*
+	TODO: Mix with 'set__entry?'
+*/
+	background: white;
+	min-height: 1.0rem;
+	padding: 0.5rem;
 }
