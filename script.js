@@ -27,7 +27,7 @@ $(document).keydown(function (event) {
 		$focused = $(".set__entry:focus");
 		offsetTop = $focused[0].offsetTop;
 		//~ console.log(offsetTop);
-		$focused.attr('data-offsetTop', offsetTop);
+		//~ $focused.attr('data-offsetTop', offsetTop);
 		
 		$prev = $focused.prev();
 		prev = $prev[0];
