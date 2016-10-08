@@ -56,7 +56,9 @@ $(document).keyup(function (event) {
 // TODO: Fix for multiple set
 $(".set:first").attr('data-d', Calendar.prev(Calendar.today()));
 $(".set:first .set__entry:first").html(Calendar.prev(Calendar.today()));
-$(".set:last").attr('data-d', Calendar.today());
-$(".set:last .set__entry:first").html(Calendar.today());
+$(".set:nth-child(2)").attr('data-d', Calendar.today());
+$(".set:nth-child(2) .set__entry:first").html(Calendar.today());
+$(".set:last").attr('data-d', Calendar.next(Calendar.today()));
+$(".set:last .set__entry:first").html(Calendar.next(Calendar.today()));
 
-$(".set:last .set__entry:last").focus();
+$(".set:nth-child(2) .set__entry:last").focus();
