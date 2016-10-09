@@ -1,6 +1,20 @@
 window.onload = function () {
-	function addPrev() {
-		
+	function addBefore(dateToSet) {
+		// TODO: Find any other solutions
+		var content = '<div class="set" data-d="' + dateToSet + '">\
+				<div class="set__entry">' + dateToSet + '</div>\
+				<div class="set__entry" contenteditable></div>\
+			</div>'
+		$('.set:first').before(content);
+	};
+	
+	function addAfter(dateToSet) {
+		// TODO: Find any other solutions
+		var content = '<div class="set" data-d="' + dateToSet + '">\
+				<div class="set__entry">' + dateToSet + '</div>\
+				<div class="set__entry" contenteditable></div>\
+			</div>'
+		$('.set:first').before(content);
 	};
 	
 	var keyName = {
@@ -92,6 +106,7 @@ window.onload = function () {
 		
 		if (action === 'b') {
 			console.log(earliest.date, C$.prev(earliest.date));
+			addBefore(C$.prev(earliest.date));
 		}
 		if (action === 'f') {
 			console.log(latest.date, C$.next(latest.date));
