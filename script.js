@@ -14,7 +14,7 @@ window.onload = function () {
 				<div class="set__entry">' + dateToSet + '</div>\
 				<div class="set__entry" contenteditable></div>\
 			</div>'
-		$('.set:first').before(content);
+		$('.set:last').after(content);
 	};
 	
 	var keyName = {
@@ -97,19 +97,18 @@ window.onload = function () {
 	$('.mount__button').click(function(event) {
 		var earliest = {};
 		var latest = {};
+		var action;
 		
 		earliest.date = $('.set:first').attr('data-d');
 		latest.date = $('.set:last').attr('data-d');
 		
-		var action = $(event.target).attr('data-a');
-		console.log(action);
+		action = $(event.target).attr('data-a');
 		
 		if (action === 'b') {
-			console.log(earliest.date, C$.prev(earliest.date));
 			addBefore(C$.prev(earliest.date));
 		}
 		if (action === 'f') {
-			console.log(latest.date, C$.next(latest.date));
+			addAfter(C$.next(latest.date));
 		}
 	});
 };
