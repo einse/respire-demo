@@ -7,11 +7,25 @@ body {
 	font-size: small;
 	background-color: lightcoral;
 	margin: 0;
-	overflow-y: hidden;
 }
 
+/**
+ * Lit part?
+ */
+
 body {
+	overflow-y: hidden;
 	overflow-x: scroll;
+}
+
+#additional-layout {
+	position: fixed;
+	min-width: 100%;
+	min-height: 100%;
+}
+
+#paper {
+	position: absolute;
 }
 
 /**
