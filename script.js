@@ -70,10 +70,12 @@ $(document).keyup(function (event) {
 
 //~ $(".set:nth-child(2) .set__entry:last").focus();
 
-$('.set:first').attr('data-d', C$.today());
-$(".set:first .set__entry:first").html($('.set:first').attr('data-d'));
-$(".set:first .set__entry:last").focus();
-
+// TODO: Wrap all code of this file by anonymous function
+window.onload = function () {
+	$('.set:first').attr('data-d', C$.today());
+	$(".set:first .set__entry:first").html($('.set:first').attr('data-d'));
+	$(".set:first .set__entry:last").focus();
+}
 
 // TODO: Add button press handling
 $('.mount__button').click(function(event) {
