@@ -349,3 +349,5 @@ var Calendar = {
 		return '';
 	}
 };
+
+var C$ = Calendar;

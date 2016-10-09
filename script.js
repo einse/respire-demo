@@ -54,11 +54,11 @@ $(document).keyup(function (event) {
 
 // TODO: See .data() in jQuery 3.x
 // TODO: Fix for multiple set
-$(".set:first").attr('data-d', Calendar.prev(Calendar.today()));
-$(".set:first .set__entry:first").html(Calendar.prev(Calendar.today()));
-$(".set:nth-child(2)").attr('data-d', Calendar.today());
-$(".set:nth-child(2) .set__entry:first").html(Calendar.today());
-$(".set:last").attr('data-d', Calendar.next(Calendar.today()));
-$(".set:last .set__entry:first").html(Calendar.next(Calendar.today()));
+$(".set:first").attr('data-d', C$.prev(C$.today()));
+$(".set:first .set__entry:first").html(C$.prev(C$.today()));
+$(".set:nth-child(2)").attr('data-d', C$.today());
+$(".set:nth-child(2) .set__entry:first").html(C$.today());
+$(".set:last").attr('data-d', C$.next(C$.today()));
+$(".set:last .set__entry:first").html(C$.next(C$.today()));
 
 $(".set:nth-child(2) .set__entry:last").focus();
