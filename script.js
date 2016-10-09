@@ -61,15 +61,30 @@ $(document).keyup(function (event) {
 // 4. Add 2 additional columns for yesterday and tomorrow.
 // 5. Call prev('today') & next('today')
 //    & then repeat (2-3) for added columns.
-//~ $(".set:first").attr('data-d', C$.prev(C$.today()));
-//~ $(".set:first .set__entry:first").html(C$.prev(C$.today()));
-//~ $(".set:nth-child(2)").attr('data-d', C$.today());
-//~ $(".set:nth-child(2) .set__entry:first").html(C$.today());
-//~ $(".set:last").attr('data-d', C$.next(C$.today()));
-//~ $(".set:last .set__entry:first").html(C$.next(C$.today()));
+$(".set:first").attr('data-d', C$.prev(C$.today()));
+$(".set:first .set__entry:first").html(C$.prev(C$.today()));
+$(".set:nth-child(2)").attr('data-d', C$.today());
+$(".set:nth-child(2) .set__entry:first").html(C$.today());
+$(".set:last").attr('data-d', C$.next(C$.today()));
+$(".set:last .set__entry:first").html(C$.next(C$.today()));
 
-//~ $(".set:nth-child(2) .set__entry:last").focus();
+$(".set:nth-child(2) .set__entry:last").focus();
 
 
 // TODO: Add button press handling
-$('.mount__button').click(function(event) {console.log(event.target);});
+$('.mount__button').click(function(event) {
+	var earliest;
+	var latest;
+	
+	var action = $(event.target).attr('data-a');
+	console.log(action);
+	
+	if (action === 'b') {
+		earliest = $('.set:first').attr('data-d');
+		console.log(earliest, C$.prev(earliest));
+	}
+	if (action === 'f') {
+		latest = $('.set:last').attr('data-d');
+		console.log(latest, C$.next(latest));
+	}
+});
