@@ -105,10 +105,16 @@ window.onload = function () {
 		action = $(event.target).attr('data-a');
 		
 		if (action === 'b') {
-			addBefore(C$.prev(earliest.date));
+			for (var i = 0; i < 3; i++) {
+				addBefore(C$.prev(earliest.date));
+				earliest.date = $('.set:first').attr('data-d');
+			}
 		}
 		if (action === 'f') {
-			addAfter(C$.next(latest.date));
+			for (var i = 0; i < 3; i++) {
+				addAfter(C$.next(latest.date));
+				latest.date = $('.set:last').attr('data-d');
+			}
 		}
 	});
 };
