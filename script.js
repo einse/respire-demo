@@ -1,4 +1,8 @@
 window.onload = function () {
+	function addPrev() {
+		
+	};
+	
 	var keyName = {
 		Ctrl: 17,
 		Enter: 13
@@ -77,19 +81,20 @@ window.onload = function () {
 
 	// TODO: Add button press handling
 	$('.mount__button').click(function(event) {
-		var earliest;
-		var latest;
+		var earliest = {};
+		var latest = {};
+		
+		earliest.date = $('.set:first').attr('data-d');
+		latest.date = $('.set:last').attr('data-d');
 		
 		var action = $(event.target).attr('data-a');
 		console.log(action);
 		
 		if (action === 'b') {
-			earliest = $('.set:first').attr('data-d');
-			console.log(earliest, C$.prev(earliest));
+			console.log(earliest.date, C$.prev(earliest.date));
 		}
 		if (action === 'f') {
-			latest = $('.set:last').attr('data-d');
-			console.log(latest, C$.next(latest));
+			console.log(latest.date, C$.next(latest.date));
 		}
 	});
 };

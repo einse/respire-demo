@@ -125,6 +125,11 @@ var Calendar = {
 		var isLeapYear = false;
 		var parsed;
 		
+		if (typeof dateString !== 'string') {
+			console.error('dateString is not a string!');
+			return false;
+		}
+		
 		/** 
 		 * Parsing the dateString
 		 * (Only positive numbers will pass.)
