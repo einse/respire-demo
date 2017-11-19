@@ -1,5 +1,5 @@
 # respire
-Daily notes app.
+Daily-notes app.
 
 ## How To Use
 Here to be instructions on use.
